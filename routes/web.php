@@ -15,10 +15,28 @@ Route::get('/', function () {
     return redirect(route('login'));
 });
 
+Route::get('/admin', function () {
+    return view('admin.dashboard');
+});
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::get('/page', 'PageController@index');
+// Route::get('/page', 'PageController@index');
 
-Route::resource('/post' , 'PostController');
+// Route::resource('/post' , 'PostController');
+
+// Route::get('/students' , 'studentController@index');
+// Route::post('/students','studentController@store')->name('Addstudent');
+// Route::get('/studentspage','studentController@show');
+// Route::get('/editstudentprofile/{id}' ,'studentController@edit');
+
+
+
+Route::get('/customer','CustomerController@index');
+Route::post('/customer','CustomerController@store')->name('Addcustomer');
+Route::get('/customer','CustomerController@show');
+Route::get('/customer_edit/{id}','CustomerController@edit');
+Route::put('/customerupdate/{id}','CustomerController@update');
+Route::get('/customer/{id}','CustomerController@destroy');

@@ -78,9 +78,15 @@
 
         <main class="py-4">
         <div class="container">
+        @include('layouts.message')
         @yield('content')
         </div>
         </main>
     </div>
+
+    <script src="/vendor/unisharp/laravel-ckeditor/ckeditor.js"></script>
+    <script>
+        CKEDITOR.replace( 'article-ckeditor');
+    </script>
 </body>
 </html>
